@@ -25,15 +25,15 @@ exports.handleGetProductsById = (req, res) => {
     }
 }
 
-exports.handlePostProducts = (req, res) => {
+exports.handlePostProducts =  (req, res) => {
     try {
-        const { productName, color, category, price } = req.body;
-        
-        if (!( productName && color && category && price )) {
+        const { product_name, color, category, price } = req.body;
+
+        if (!( product_name && color && category && price )) {
             return res.status(400).json({ message: 'Faltan algunos campos' })
         }
 
-        const data = createProduct({productName, color, category, price})
+        const data = createProduct({product_name, color, category, price})
 
         res.status(201).json({ data })
         
@@ -46,9 +46,9 @@ exports.handlePostProducts = (req, res) => {
 exports.handleUpdateProduct = (req, res) => {
     try {
         const { id } = req.params;
-        const { body } = req;
+        const { productName, color, category, price } = req.body;
 
-        const data = updateProduct(id, body )
+        const data = updateProduct(id, { productName, color, category, price } )
 
         res.status(200).json({ data })
 
