@@ -35,7 +35,7 @@ exports.handlePostProducts =  (req, res) => {
 
         const data = createProduct({product_name, color, category, price})
 
-        res.status(201).json({ data })
+        res.status(201).json( data )
         
     } catch (error) {
         res.status(400).json({ message: error.message })
