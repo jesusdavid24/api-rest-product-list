@@ -9,7 +9,7 @@ const {
 exports.handleGetAllProducts = (req, res) => {
     try {
         const data = getProduct();
-        res.status(201).json({ data })
+        res.status(201).json( data )
     } catch (error) {
         res.status(400).json({ message: error.message })
     }
@@ -19,7 +19,7 @@ exports.handleGetProductsById = (req, res) => {
     try {
         const { id } = req.params;
         const data = getProductById(id);
-        res.status(201).json({ data })
+        res.status(201).json( data )
     } catch (error) {
         res.status(400).json({ message: error.message })
     }
@@ -46,11 +46,11 @@ exports.handlePostProducts =  (req, res) => {
 exports.handleUpdateProduct = (req, res) => {
     try {
         const { id } = req.params;
-        const { productName, color, category, price } = req.body;
+        const { product_name, color, category, price } = req.body;
 
-        const data = updateProduct(id, { productName, color, category, price } )
+        const data = updateProduct(id, { product_name, color, category, price } )
 
-        res.status(200).json({ data })
+        res.status(200).json( data )
 
     } catch (error) {
         res.status(400).json({ message: error.message })
