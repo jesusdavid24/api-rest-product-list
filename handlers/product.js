@@ -3,8 +3,12 @@ const {
     getProduct,
     getProductById, 
     updateProduct,
-    deleteProduct
+    deleteProduct,
 } = require("../models/product")
+
+exports.healthCheck = (req, res) => {
+    res.status(201).json('Api runing')
+}
 
 exports.handleGetAllProducts = (req, res) => {
     try {

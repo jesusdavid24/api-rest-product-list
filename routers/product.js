@@ -4,9 +4,11 @@ const {
     handleDeleteProduct,
     handleGetAllProducts,
     handleGetProductsById,
-    handlePostProducts
+    handlePostProducts,
+    healthCheck
 } = require('../handlers/product')
 
+router.get('/healthcheck', healthCheck)
 router.get('/', handleGetAllProducts);
 router.get('/:id', handleGetProductsById);
 router.post('/createProduct', handlePostProducts);
