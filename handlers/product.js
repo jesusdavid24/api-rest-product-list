@@ -7,7 +7,7 @@ const {
 } = require("../models/product")
 
 exports.healthCheck = (req, res) => {
-    res.status(201).json('Api runing')
+    res.status(200).send('Api runing');
 }
 
 exports.handleGetAllProducts = (req, res) => {
