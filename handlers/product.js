@@ -14,7 +14,7 @@ exports.handleGetAllProducts = (req, res) => {
     try {
         const data = getProduct();
 
-        res.status(201).json(data);
+        res.status(200).json(data);
 
     } catch (error) {
         res.status(400).json({ message: error.message });
@@ -26,7 +26,7 @@ exports.handleGetProductsById = (req, res) => {
         const { id } = req.params;
         const data = getProductById(id);
 
-        res.status(201).json(data);
+        res.status(200).json(data);
 
    } catch (error) {
         res.status(400).json({ message: error.message });
@@ -44,6 +44,7 @@ exports.handlePostProducts = (req, res) => {
         const data = createProduct({ product_name, color, category, price });
 
         res.status(201).json(data);
+
     } catch (error) {
         res.status(400).json({ message: error.message });
     }
@@ -72,6 +73,6 @@ exports.handleDeleteProduct = (req, res) => {
         res.status(201).json({ data });
 
     } catch (error) {
-        res.status(400).json({ message: error.message });
+    res.status(400).json({ message: error.message });
     }
 };
