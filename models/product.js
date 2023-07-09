@@ -1,40 +1,39 @@
-const db = require("@makeitrealcamp/db-mock")
+const db = require("@makeitrealcamp/db-mock");
 
 const getProduct = () => {
-    const product = db.findAll()
+   const product = db.findAll();
 
-    return product
-}
+   return product;
+};
 
 const getProductById = (id) => {
-    const product = db.findById(id)
+   const product = db.findById(id);
 
-    return product
-}
+   return product;
+};
 
 const createProduct = (data) => {
-    const product = db.insert(data)
+   const product = db.insert(data);
 
-    return product 
+   return product;
 };
 
 const updateProduct = (id, data) => {
-    const product = db.update({id, ...data})
+   const product = db.update({ id, ...data });
 
-    return product
-}
+   return product;
+};
 
 const deleteProduct = (id) => {
-    const product = db.remove(id)
+   const product = db.remove(id);
 
-    return product
-}
-
+   return product;
+};
 
 module.exports = {
-    createProduct,
-    getProduct,
-    getProductById,
-    updateProduct,
-    deleteProduct
-}
+   createProduct,
+   getProduct,
+   getProductById,
+   updateProduct,
+   deleteProduct,
+};
